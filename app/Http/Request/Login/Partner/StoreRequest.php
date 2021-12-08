@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Request\Partner;
+namespace App\Http\Request\Login\Partner;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,10 +24,14 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|string',
-            'content'=>'required|string',
-            'preview_image'=>'required|file',
-            'category_id'=>'required|exists:categories,id',
+            'institution_name'=>'required|string',
+            'director_name'=>'required|string',
+            'phone'=>'required',
+            'email'=>'required',
+            'address'=>'required',
+            'type'=>'required',
+            'purpose'=>'required',
+            'password'=>'required'
         ];
     }
 }

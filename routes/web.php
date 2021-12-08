@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('Login.Student.create');
+    return view('leyouts.app');
 });
 
 

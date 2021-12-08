@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Login\Employer;
+namespace App\Http\Controllers\Work\Work;
 
 use App\Http\Controllers\Controller;
-use App\Http\Request\Login\Employer\StoreRequest;
-use App\Models\Login\Employer;
+use App\Http\Request\Work\Work\StoreRequest;
+use App\Models\Work\Freelace;
 use Illuminate\Support\Facades\Hash;
 
 class StoreController extends Controller
@@ -15,13 +15,13 @@ class StoreController extends Controller
         $a = [
            'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']), 
+            'password' => Hash::make($data['password']),
         ];
-        
 
-        Employer::create($a);
+
+        Freelace::create($a);
 
 
         return redirect()->route('employer.create');
-    } 
+    }
 }

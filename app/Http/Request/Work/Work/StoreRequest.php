@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Request\Login\Institution;
+namespace App\Http\Request\Work\Work;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -9,7 +9,6 @@ class StoreRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      *
-     * @return bool
      */
     public function authorize()
     {
@@ -24,14 +23,9 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'institution_name'=>'required|string',
-            'director_name'=>'required|string',
-            'phone'=>'required',
-            'email'=>'required',
-            'address'=>'required',
-            'type'=>'required',
-            'purpose'=>'required',
-            'password'=>'required'
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
 }

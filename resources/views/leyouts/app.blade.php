@@ -20,13 +20,36 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-         <a href="{{route('student.create')}}" class="btn btn-block btn-primary">student</a>
+        {{-- <a href="{{route('student.create')}}" class="btn btn-block btn-primary">student</a>
         <a href="{{route('guest.create')}}" class="btn btn-block btn-primary">guest</a>
         <a href="{{route('lecturer.create')}}" class="btn btn-block btn-primary">lecturer</a>
-        <a href="{{route('employer.create')}}" class="btn btn-block btn-primary">employer</a>
+        <a href="{{route('employer.create')}}" class="btn btn-block btn-primary">employer</a> --}}
         {{-- <a href="{{route('institution.create')}}" class="btn btn-block btn-primary">institution</a>
         <a href="{{route('partner.create')}}" class="btn btn-block btn-primary">partner</a> --}}
-    <div id="app">
+        <div class="register">
+            <div class="logo">
+                <img src="{{ asset('images/logoGit.png') }}" class="logoImg">
+                <img src="{{ asset('images/GlobalIt.png') }}" class="logoText">
+            </div>
+            <button type="submit" class="vector"><img src="vector.png"></button>
+            <div id="sub">
+                <button id="reg"><p style="margin-top: 0em;">Գրանցվել</p></button>
+                <button id="sign">Մուտք</button>
+            </div>
+            <p id="reg2p">Գրանցվել որպես՝</p>
+            <div id="divForm">
+
+                <button type="submit" onclick="window.location.href='{{ route('student.create') }}'"  class="buttonForm"><img class="img1" src="{{ asset('') }}us.png"><p class="pForm">Ուսանող</p></button>
+                <button type="submit"   class="buttonForm"><img class="img2" src="{{ asset('images/sch.png') }}"><p class="pForm">Ուս․ հաստատություն</p></button>
+                <button type="submit" onclick="window.location.href='{{ route('lecturer.create') }}'"  class="buttonForm"><img class="img3" src="{{ asset('images/teach.png') }}"><p class="pForm">Դասախոս</p></button>
+                <button type="submit" class="buttonForm"><img class="img4" src="{{ asset('images/fr.png') }}"><p class="pForm">Ֆրիլանսեր/Գործատու</p></button>
+                <button type="submit" onclick="window.location.href='{{ route('guest.create') }}'"  class="buttonForm"><img class="img5" src="{{ asset('images/gh.png') }}"><p class="pForm">Հյուր</p></button>
+                <button type="submit" onclick="window.location.href='{{ route('employer.create') }}'"  class="buttonForm"><img class="img6" src="{{ asset('images/kol.png') }}"><p class="pForm">Գործընկեր</p></button>
+
+            </div>
+        </div>
+
+    {{-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -79,7 +102,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         <main class="py-4">
             @yield('content')

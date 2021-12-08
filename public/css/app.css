@@ -1,4 +1,4 @@
-*{
+/* *{
     box-sizing: border-box;
 }
 body{
@@ -165,8 +165,8 @@ body{
 
 *{
     box-sizing: border-box;
-}
-/* body{
+} */
+body{
     background-color: #252525;
     display: flex;
 }
@@ -326,4 +326,4 @@ body{
     font-weight: normal;
     font-size: 1rem;
     color: #FDFDFD;
-} */
+}
